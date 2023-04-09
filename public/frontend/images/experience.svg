@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <g id="Group_144" data-name="Group 144" transform="translate(-720 -394)">
+    <g id="Ellipse_35" data-name="Ellipse 35" transform="translate(720 394)" fill="none" stroke="#f1b74d" stroke-width="2">
+      <circle cx="80" cy="80" r="80" stroke="none"/>
+      <circle cx="80" cy="80" r="79" fill="none"/>
+    </g>
+    <g id="Group_128" data-name="Group 128">
+      <text id="_25" data-name="25" transform="translate(771 468)" fill="#f1b74d" font-size="45" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="0" y="0">25</tspan></text>
+      <text id="Years_of_Experience" data-name="Years of
+Experience" transform="translate(800 498)" fill="#fff" font-size="15" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-27.719" y="0">Years of</tspan><tspan x="-36.958" y="20">Experience</tspan></text>
+    </g>
+  </g>
+</svg>

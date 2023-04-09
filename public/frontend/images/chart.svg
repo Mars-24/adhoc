@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="130" viewBox="0 0 80 130">
+  <g id="Group_145" data-name="Group 145" transform="translate(-167 -801)">
+    <g id="Rectangle_152" data-name="Rectangle 152" transform="translate(167 801)" fill="none" stroke="#f1b74d" stroke-width="2">
+      <rect width="80" height="130" stroke="none"/>
+      <rect x="1" y="1" width="78" height="128" fill="none"/>
+    </g>
+    <g id="pie-chart" transform="translate(177 811)" opacity="0.5">
+      <g id="Group_130" data-name="Group 130">
+        <g id="Group_129" data-name="Group 129">
+          <path id="Path_5547" data-name="Path 5547" d="M16.328,0A16.319,16.319,0,0,0,0,16.328a.88.88,0,0,0,.88.88H16.328a.88.88,0,0,0,.88-.88V.88A.88.88,0,0,0,16.328,0Z" fill="#f1b74d"/>
+        </g>
+      </g>
+      <g id="Group_132" data-name="Group 132" transform="translate(3.215 19.294)">
+        <g id="Group_131" data-name="Group 131">
+          <path id="Path_5548" data-name="Path 5548" d="M61.726,329.743a.88.88,0,0,0-.771-.457h-5.2a.88.88,0,0,0-.839,1.143A13.708,13.708,0,0,0,67.1,339.992V333.4A7.136,7.136,0,0,1,61.726,329.743Z" transform="translate(-54.872 -329.286)" fill="#f1b74d"/>
+        </g>
+      </g>
+      <g id="Group_134" data-name="Group 134" transform="translate(19.294 3.215)">
+        <g id="Group_133" data-name="Group 133">
+          <path id="Path_5549" data-name="Path 5549" d="M330.429,54.914a.88.88,0,0,0-1.143.839v5.2a.88.88,0,0,0,.457.771,7.136,7.136,0,0,1,3.655,5.379h6.594A13.708,13.708,0,0,0,330.429,54.914Z" transform="translate(-329.286 -54.874)" fill="#f1b74d"/>
+        </g>
+      </g>
+      <g id="Group_136" data-name="Group 136" transform="translate(17.208 17.208)">
+        <g id="Group_135" data-name="Group 135">
+          <path id="Path_5550" data-name="Path 5550" d="M299.878,293.678a7.147,7.147,0,0,1-6.2,6.2v6.592a13.69,13.69,0,0,0,12.792-12.792Z" transform="translate(-293.679 -293.678)" fill="#f1b74d"/>
+        </g>
+      </g>
+    </g>
+    <rect id="Rectangle_153" data-name="Rectangle 153" width="25" height="5" transform="translate(177 851)" fill="#fff" opacity="0.5"/>
+    <rect id="Rectangle_154" data-name="Rectangle 154" width="40" height="5" transform="translate(177 861)" fill="#fff" opacity="0.5"/>
+    <rect id="Rectangle_155" data-name="Rectangle 155" width="60" height="5" transform="translate(177 871)" fill="#fff" opacity="0.5"/>
+    <rect id="Rectangle_156" data-name="Rectangle 156" width="60" height="5" transform="translate(177 881)" fill="#fff" opacity="0.5"/>
+    <rect id="Rectangle_157" data-name="Rectangle 157" width="60" height="5" transform="translate(177 891)" fill="#fff" opacity="0.5"/>
+    <rect id="Rectangle_158" data-name="Rectangle 158" width="28" height="20" transform="translate(177 901)" fill="#fff" opacity="0.5"/>
+    <rect id="Rectangle_159" data-name="Rectangle 159" width="28" height="20" transform="translate(209 901)" fill="#fff" opacity="0.5"/>
+  </g>
+</svg>
