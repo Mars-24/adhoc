@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="banner-content">
-						<h1 class="h1-title wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">Contactez-Nous</h1>
+						<h1 class="h1-title wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">Contactez-nous</h1>
 						<div class="breadcrumb-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.3s">
                             <a href="{{ route('index') }}" title="Home">Acceuil</a>
                             <span class="arrow"><img src="{{ asset('frontend/images/right-arrow.svg') }}" alt="Arrow"></span>
@@ -62,18 +62,19 @@
 						<div class="title left">
 							<span class="sub-title">CONTACTEZ-NOUS</span>
 						</div>
-						<h2 class="h2-title">Contactez-Nous Pour Toute Information</h2>
+						<h2 class="h2-title">Contactez-nous pour toute information</h2>
 						<div class="contact-form">
-							<form>
+							<form method="POST" action="{{ route('message') }}">
+								@csrf
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-box">
-											<input name="firstname" type="text" class="form-input" placeholder="Prénom" required>
+											<input name="prenoms" type="text" class="form-input" placeholder="Prénom" required>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-box">
-											<input name="lastname" type="text" class="form-input" placeholder="Nom de famille" required>
+											<input name="name" type="text" class="form-input" placeholder="Nom de famille" required>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -83,7 +84,7 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-box">
-											<input type="text" name="phonenumber" class="form-input" placeholder="Numéro de téléphone" required>
+											<input type="text" name="phone" class="form-input" placeholder="Numéro de téléphone" required>
 										</div>
 									</div>
 									<div class="col-12">
@@ -102,9 +103,9 @@
 					</div>
 				</div>
 				<div class="col-lg-5 wow left-animation" data-wow-duration="1s" data-wow-delay="0.2s">
-					<div class="google-map">
+					{{-- <div class="google-map">
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d172744.69784295498!2d-121.76887171678929!3d38.592420248044654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80852b16e7cc5ef7%3A0x6cdbd93f708beeee!2sWebster%2C%20CA%2095618%2C%20USA!5e0!3m2!1sen!2sin!4v1637322401820!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-					</div>
+					</div> --}}
 				</div>
 			</div>
 		</div>

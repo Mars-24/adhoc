@@ -7,7 +7,7 @@
                         <span class="sub-title">NOTRE ÉQUIPE</span>
                     </div>
                     <h2 class="h2-title wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.3s">
-                        Rencontrez Nos spécialistes</h2>
+                        Rencontrez nos spécialistes</h2>
                 </div>
             </div>
         </div>
@@ -16,21 +16,21 @@
                 <div class="col-lg-3">
                     <div class="team-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="team-img">
-                            <img width="558" height="800"
-                                src="{{ asset('frontend/images/team-img1.png') }}" alt="Team">
+                            <img width="558" height="800" src="{{ asset('frontend/images/team-img1.png') }}"
+                                alt="adhoc Team">
                         </div>
                         <div class="team-text-box">
                             <div class="team-text">
-                                <h3 class="h3-title">John Doe</h3>
-                                <p>Web Designer</p>
+                                <h3 class="h3-title">Dominique AGNAOU</h3>
+                                <p>Project manager/Brand manager</p>
                             </div>
                             <div class="team-social">
-                                <a href="javascript:void(0)" title="Follow on Facebook"><i
-                                        class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Instagram"><i
-                                        class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Twitter"><i
-                                        class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Facebook"><i class="fa fa-facebook"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Instagram"><i class="fa fa-instagram"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Twitter"><i class="fa fa-twitter"
+                                        aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -38,21 +38,22 @@
                 <div class="col-lg-3">
                     <div class="team-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.3s">
                         <div class="team-img">
-                            <img width="558" height="800"
-                                src="{{ asset('frontend/images/team-img2.png') }}" alt="Team">
+                            <img width="558" height="800" src="{{ asset('frontend/images/team-img1.png') }}"
+                                alt="adhoc Team">
                         </div>
                         <div class="team-text-box">
                             <div class="team-text">
-                                <h3 class="h3-title">Dariya Smith</h3>
-                                <p>Web Designer</p>
+                                <h3 class="h3-title">Bede LAWSON</h3>
+                                </h3>
+                                <p>Chargée de communication</p>
                             </div>
                             <div class="team-social">
-                                <a href="javascript:void(0)" title="Follow on Facebook"><i
-                                        class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Instagram"><i
-                                        class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Twitter"><i
-                                        class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Facebook"><i class="fa fa-facebook"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Instagram"><i class="fa fa-instagram"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Twitter"><i class="fa fa-twitter"
+                                        aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -60,26 +61,26 @@
                 <div class="col-lg-3">
                     <div class="team-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.4s">
                         <div class="team-img">
-                            <img width="558" height="800"
-                                src="{{ asset('frontend/images/team-img3.png') }}" alt="Team">
+                            <img width="558" height="800" src="{{ asset('frontend/images/team-img3.png') }}"
+                                alt="adhoc Team">
                         </div>
                         <div class="team-text-box">
                             <div class="team-text">
-                                <h3 class="h3-title">Smith Adarson</h3>
-                                <p>Web Designer</p>
+                                <h3 class="h3-title">Didier KISSODE</h3>
+                                <p>Consultant en stratégie digitale et d'influence</p>
                             </div>
                             <div class="team-social">
-                                <a href="javascript:void(0)" title="Follow on Facebook"><i
-                                        class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Instagram"><i
-                                        class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Twitter"><i
-                                        class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Facebook"><i class="fa fa-facebook"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Instagram"><i class="fa fa-instagram"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Twitter"><i class="fa fa-twitter"
+                                        aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                {{-- <div class="col-lg-3">
                     <div class="team-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="team-img">
                             <img width="558" height="800"
@@ -100,30 +101,30 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-lg-3">
                     <div class="team-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="team-img">
-                            <img width="558" height="800"
-                                src="{{ asset('frontend/images/team-img5.png') }}" alt="Team">
+                            <img width="558" height="800" src="{{ asset('frontend/images/team-img5.png') }}"
+                                alt="Team">
                         </div>
                         <div class="team-text-box">
                             <div class="team-text">
-                                <h3 class="h3-title">Tony Johnson</h3>
-                                <p>Web Designer</p>
+                                <h3 class="h3-title">Freeman DOSSOU</h3>
+                                <p>Designer UX/UI</p>
                             </div>
                             <div class="team-social">
-                                <a href="javascript:void(0)" title="Follow on Facebook"><i
-                                        class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Instagram"><i
-                                        class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Twitter"><i
-                                        class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Facebook"><i class="fa fa-facebook"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Instagram"><i class="fa fa-instagram"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Twitter"><i class="fa fa-twitter"
+                                        aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                {{-- <div class="col-lg-3">
                     <div class="team-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.3s">
                         <div class="team-img">
                             <img width="558" height="800"
@@ -144,30 +145,30 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-lg-3">
                     <div class="team-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.4s">
                         <div class="team-img">
-                            <img width="558" height="800"
-                                src="{{ asset('frontend/images/team-img7.png') }}" alt="Team">
+                            <img width="558" height="800" src="{{ asset('frontend/images/team-img7.png') }}"
+                                alt="Team">
                         </div>
                         <div class="team-text-box">
                             <div class="team-text">
-                                <h3 class="h3-title">Paul Dawyne</h3>
+                                <h3 class="h3-title">Germain MENSAH</h3>
                                 <p>Web Designer</p>
                             </div>
                             <div class="team-social">
-                                <a href="javascript:void(0)" title="Follow on Facebook"><i
-                                        class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Instagram"><i
-                                        class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Twitter"><i
-                                        class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Facebook"><i class="fa fa-facebook"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Instagram"><i class="fa fa-instagram"
+                                        aria-hidden="true"></i></a>
+                                <a href="javascript:void(0)" title="Follow on Twitter"><i class="fa fa-twitter"
+                                        aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                {{-- <div class="col-lg-3">
                     <div class="team-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="team-img">
                             <img width="558" height="800"
@@ -188,7 +189,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

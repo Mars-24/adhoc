@@ -2,12 +2,19 @@
 <html lang="en-us">
 
 <head>
-    <title>Adhoc</title>
+    <title>adhoc</title>
     <meta charset="utf-8">
     <meta name="keywords" content="adhoc" />
     <meta name="description" content="adhoc" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  
+    <meta name="description"
+    content="adhoc a pour mission d'accompagner et de guider tous types d'entreprises à la recherche des meilleures stratégies visuelles et digitales pour atteindre ses objectifs.">
+    <meta property="og:url" content="https://adhoc.tg">
+    <meta property="og:title" content="adhoc">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ asset('frontend/images/logo.png') }}" />
+    <meta property="og:image:type" content="image/png" />
     <!-- FavIcon Link -->
     <link rel="icon" href="{{ asset('frontend/images/favicon.png') }}" type="image/gif" sizes="16x16">
 
@@ -59,10 +66,10 @@
                     <div class="col-12">
                         <div class="header-box">
                             <div class="site-branding">
-                                <a href="index.html" title="Digital Design">
-                                    <img src="{{ asset('frontend/images/logo.png') }}" alt="Digital Design">
+                                <a href="{{ route('index') }}" title="adhoc">
+                                    <img src="{{ asset('frontend/images/logo.png') }}" alt="adhoc logo">
                                     <img src="{{ asset('frontend/images/logo-black.png') }}" class="sticky-logo"
-                                        alt="Digital Design">
+                                        alt="adhoc logo">
                                 </a>
                             </div>
                             <div class="header-menu">
@@ -82,6 +89,13 @@
                                                     href="{{ route('service') }}" title="Services">Services</a></li>
                                             <li class="{{ request()->routeIs('portfolio') ? 'active' : '' }}"><a
                                                     href="{{ route('portfolio') }}" title="Portfolio">Portfolio</a>
+                                            </li>
+                                            <li class="sub-items {{ request()->routeIs('blog-list') ? 'active' : '' }}">
+                                                <a href="javascript:void(0);" title="Blog">Blog</a>
+                                                <ul class="sub-menu">
+                                                    <li class="{{ request()->routeIs('blog-list') ? 'active' : '' }}"><a href="{{route('blog-list')}}" title="Blog List">Blog List</a></li>
+                                                    <li><a href="blog-detail.html" title="Blog Detail">Blog Detail</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -105,27 +119,27 @@
             <div class="partners-slider">
                 <div class="partner-img">
                     <img width="245" height="34" src="{{ asset('frontend/images/converse-logo.png') }}"
-                        alt="Converse">
+                        alt="adhoc Converse">
                 </div>
                 <div class="partner-img">
                     <img width="245" height="46" src="{{ asset('frontend/images/unison-logo.png') }}"
-                        alt="Unison">
+                        alt="adhoc Unison">
                 </div>
                 <div class="partner-img">
                     <img width="245" height="67" src="{{ asset('frontend/images/rollei-logo.png') }}"
-                        alt="Rollei">
+                        alt="adhoc Rollei">
                 </div>
                 <div class="partner-img">
                     <img width="245" height="46" src="{{ asset('frontend/images/deloitte-logo.png') }}"
-                        alt="Deloitte">
+                        alt="adhoc Deloitte">
                 </div>
                 <div class="partner-img">
                     <img width="245" height="75"
-                        src="{{ asset('frontend/images/friendly-s-restaurant-logo.png') }}" alt="Friendly">
+                        src="{{ asset('frontend/images/friendly-s-restaurant-logo.png') }}" alt="adhoc Friendly">
                 </div>
                 <div class="partner-img">
                     <img width="245" height="67" src="{{ asset('frontend/images/rollei-logo.png') }}"
-                        alt="Rollei">
+                        alt="adhoc Rollei">
                 </div>
             </div>
         </div>
@@ -142,7 +156,7 @@
                                     <span class="sub-title">NewsLetter</span>
                                 </div>
                                 <h2 class="h2-title wow fadeup-animation" data-wow-duration="1s"
-                                    data-wow-delay="0.3s">Restons En Contact</h2>
+                                    data-wow-delay="0.3s">Restons en contact</h2>
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-lg-6">
@@ -166,8 +180,8 @@
                     <div class="col-lg-3 wow right-animation" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="footer-info">
                             <div class="footer-logo">
-                                <a href="index.html" title="Digital Design">
-                                    <img src="{{ asset('frontend/images/logo.png') }}" alt="Digital Design">
+                                <a href="{{ route('index') }}" title="adhoc">
+                                    <img src="{{ asset('frontend/images/logo.png') }}" alt="adhoc logo">
                                 </a>
                             </div>
                             <div class="footer-contact-link">
@@ -199,7 +213,7 @@
                                 <li><a href="{{ route('about') }}" title="À propos">À propos</a></li>
                                 <li><a href="{{ route('service') }}" title="Services">Services</a></li>
                                 <li><a href="{{ route('portfolio') }}" title="Portfolio">Portfolio</a></li>
-                                <li><a href="{{ route('portfolio') }}" title="Nous contacter">Nous contacter</a></li>
+                                <li><a href="{{ route('contact') }}" title="Nous contacter">Nous contacter</a></li>
                             </ul>
                         </div>
                     </div>
@@ -212,12 +226,14 @@
                                 communication 360° ; la création et gestion des marques ; le community management ; le
                                 référencement SE0, le développement web et le web design.</p>
                             <div class="social-icon">
-                                <a href="javascript:void(0)" title="Follow on Facebook"><i class="fa fa-facebook"
-                                        aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Instagram"><i class="fa fa-instagram"
-                                        aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Twitter"><i class="fa fa-twitter"
-                                        aria-hidden="true"></i></a>
+                                <a href="https://www.facebook.com/adhoc.tg" title="Follow on Facebook"><i
+                                        class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://www.instagram.com/adhoc.tg/" title="Follow on Instagram"><i
+                                        class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/adhoc_tg" title="Follow on Twitter"><i
+                                        class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.pinterest.fr/adhoc_Tg/" title="Follow on Pinterest"><i
+                                        class="fa fa-pinterest" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>

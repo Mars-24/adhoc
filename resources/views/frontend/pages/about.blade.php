@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-content">
-                        <h1 class="h1-title wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">À Propos De Nous
+                        <h1 class="h1-title wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">À propos de nous
                         </h1>
                         <div class="breadcrumb-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.3s">
                             <a href="{{ route('index') }}" title="Acceuil">Acceuil</a>

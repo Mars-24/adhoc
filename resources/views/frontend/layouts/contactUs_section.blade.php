@@ -5,7 +5,7 @@
             <div class="col-lg-5 wow right-animation" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="contact-img">
                     <img width="524" height="708" src="{{ asset('frontend/images/contact-img.png') }}"
-                        alt="Man">
+                        alt="adhoc Man">
                 </div>
             </div>
             <div class="col-lg-7 wow left-animation" data-wow-duration="1s" data-wow-delay="0.2s">
@@ -13,19 +13,19 @@
                     <div class="title left">
                         <span class="sub-title">CONTACTEZ-NOUS</span>
                     </div>
-                    <h2 class="h2-title">Contactez-Nous Pour Toute Information</h2>
+                    <h2 class="h2-title">Contactez-nous pour toute information</h2>
                     <div class="contact-form">
-                        <form>
+                        <form action="{{ route('message') }}" method="POST">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-box">
-                                        <input name="firstname" type="text" class="form-input"
+                                        <input name="prenoms" type="text" class="form-input"
                                             placeholder="Prénom" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-box">
-                                        <input name="lastname" type="text" class="form-input"
+                                        <input name="name" type="text" class="form-input"
                                             placeholder="Nom de famille" required>
                                     </div>
                                 </div>
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-box">
-                                        <input type="text" name="phonenumber" class="form-input"
+                                        <input type="text" name="phone" class="form-input"
                                             placeholder="Numéro de téléphone" required>
                                     </div>
                                 </div>
