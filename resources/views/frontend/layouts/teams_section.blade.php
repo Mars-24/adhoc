@@ -35,29 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="team-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.3s">
-                        <div class="team-img">
-                            <img width="558" height="800" src="{{ asset('frontend/images/team-img1.png') }}"
-                                alt="adhoc Team">
-                        </div>
-                        <div class="team-text-box">
-                            <div class="team-text">
-                                <h3 class="h3-title">Bede LAWSON</h3>
-                                </h3>
-                                <p>Chargée de communication</p>
-                            </div>
-                            <div class="team-social">
-                                <a href="javascript:void(0)" title="Follow on Facebook"><i class="fa fa-facebook"
-                                        aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Instagram"><i class="fa fa-instagram"
-                                        aria-hidden="true"></i></a>
-                                <a href="javascript:void(0)" title="Follow on Twitter"><i class="fa fa-twitter"
-                                        aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+             
                 <div class="col-lg-3">
                     <div class="team-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.4s">
                         <div class="team-img">

@@ -29,8 +29,7 @@
                                 <p>Nous croyons que « le visuel » constitue le langage le plus puissant de votre
                                     communication, et que votre image doit travailler pour vous.</p>
                             </div>
-                            <a href="javascript:void(0);" class="read-more" title="Read More" data-toggle="modal"
-                                data-target="#staticBackdrop">En savoir plus</a>
+                            <a href="{{route('service_design-detail')}}" class="read-more" title="Read More">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -49,8 +48,7 @@
                                     relation de proximité avec vos clients, les réseaux sociaux sont aussi nécessaires
                                     pour développer votre business.</p>
                             </div>
-                            <a href="javascript:void(0);" class="read-more" title="Read More" data-toggle="modal"
-                                data-target="#modal-reseau"> En savoir plus</a>
+                            <a href="{{route('service_resaux')}}" class="read-more" title="Read More"> En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -68,8 +66,7 @@
                                     permet d’être visible en ligne, d’accroître votre crédibilité et d’améliorer l’image
                                     de marque de votre entreprise.</p>
                             </div>
-                            <a href="javascript:void(0);" class="read-more" title="Read More" data-toggle="modal"
-                                data-target="#web">En savoir plus</a>
+                            <a href="{{route('service_web')}}" class="read-more" title="Read More">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -88,8 +85,8 @@
                                     permettant ainsi de mieux comprendre leurs besoins et leurs intérêts et donc de
                                     mieux les atteindre.</p>
                             </div>
-                            <a href="javascript:void(0);" class="read-more" title="Read More" title="Read More"
-                                data-toggle="modal" data-target="#marketing">En savoir plus</a>
+                            <a href="{{route('service_marketing')}}" class="read-more" title="Read More" title="Read More"
+                                >En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -106,7 +103,7 @@
                                 <p>Vous avez de bons produits avec de jolis packagings, pourquoi ne pas les présenter
                                     avec de jolies photos ?</p>
                             </div>
-                            <a href="javascript:void(0);" class="read-more" title="Read More" data-toggle="modal" data-target="#shooting-produit">En savoir plus</a>
+                            <a href="{{route('service_shooting')}}" class="read-more" title="Read More">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +120,7 @@
                                 <p>Voulez-vous que votre marque perdure dans le temps ? Avec la multiplicité des
                                     marques, il est facile pour votre marque de se perdre dans la masse.</p>
                             </div>
-                            <a href="javascript:void(0);" class="read-more" title="Read More" data-toggle="modal" data-target="#management">En savoir plus</a>
+                            <a href="{{route('service_management')}}" class="read-more" title="Read More">En savoir plus</a>
                         </div>
                     </div>
                 </div>

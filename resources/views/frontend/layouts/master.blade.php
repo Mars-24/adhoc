@@ -85,17 +85,13 @@
                                                     href="{{ route('index') }}" title="Accueil">Accueil</a></li>
                                             <li class="{{ request()->routeIs('about') ? 'active' : '' }}"><a
                                                     href="{{ route('about') }}" title="À propos">À propos</a></li>
-                                            <li class="{{ request()->routeIs('service') ? 'active' : '' }}"><a
+                                            <li class="{{ request()->routeIs('service') || request()->routeIs('service_design-detail')|| request()->routeIs('service_web')|| request()->routeIs('service_shooting')|| request()->routeIs('service_marketing')|| request()->routeIs('service_management') ? 'active' : '' }}"><a
                                                     href="{{ route('service') }}" title="Services">Services</a></li>
                                             <li class="{{ request()->routeIs('portfolio') ? 'active' : '' }}"><a
                                                     href="{{ route('portfolio') }}" title="Portfolio">Portfolio</a>
                                             </li>
-                                            <li class="sub-items {{ request()->routeIs('blog-list') ? 'active' : '' }}">
-                                                <a href="javascript:void(0);" title="Blog">Blog</a>
-                                                <ul class="sub-menu">
-                                                    <li class="{{ request()->routeIs('blog-list') ? 'active' : '' }}"><a href="{{route('blog-list')}}" title="Blog List">Blog List</a></li>
-                                                    <li><a href="blog-detail.html" title="Blog Detail">Blog Detail</a></li>
-                                                </ul>
+                                            <li class="{{ request()->routeIs('blog-list') ? 'active' : '' }}">
+                                                <a href="{{route('blog-list')}}" title="Blog List">Blog</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -165,7 +161,7 @@
                                         <form>
                                             <div class="form-box mb-0">
                                                 <input name="emailaddress" type="email" class="form-input"
-                                                    placeholder="Entrer l'dresse e-mail..." required>
+                                                    placeholder="Entrer l'adresse e-mail..." required>
                                                 <button name="subscribe" type="submit" value="Submit"
                                                     class="sec-btn"><span>Abonnez-Vous</span></button>
                                             </div>

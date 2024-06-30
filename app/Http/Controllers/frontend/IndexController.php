@@ -4,9 +4,14 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\Category_blog;
+use App\Models\Comment;
 use App\Models\Message;
 use App\Models\Portfolio;
+use App\Models\Post;
 use App\Models\User;
+use App\Models\Tags;
+
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -28,9 +33,28 @@ class IndexController extends Controller
     public function portfolio(){
         return view('frontend.pages.portfolio');
     }
-    public function blog_list(){
-        return view('frontend.pages.blog-list');
-    }
+   
+
+
+    public function service_design_detail(){
+        return view('frontend.pages.service-detail');
+    } 
+    public function service_reseaux(){
+        return view('frontend.pages.service-detail-reseau');
+    } 
+    public function service_web(){
+        return view('frontend.pages.service-detail-web');
+    } 
+    public function service_marketing(){
+        return view('frontend.pages.service-detail-marketing');
+    } 
+    public function service_shooting(){
+        return view('frontend.pages.service-detail-shooting');
+    } 
+    public function service_management(){
+        return view('frontend.pages.service-detail-management');
+    } 
+   
     public function contact(){
         return view('frontend.pages.contact');
     }

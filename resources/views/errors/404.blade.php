@@ -59,7 +59,7 @@
                     <div class="col-12">
                         <div class="header-box">
                             <div class="site-branding">
-                                <a href="index.html" title="Digital Design">
+                                <a href="{{route('index')}}" title="Digital Design">
                                     <img src="{{ asset('frontend/images/logo.png') }}" alt="Digital Design">
                                     <img src="{{ asset('frontend/images/logo-black.png') }}" class="sticky-logo"
                                         alt="Digital Design">

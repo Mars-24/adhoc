@@ -79,6 +79,28 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-blog"></i>
+                        <p>
+                            Gestion du Blog
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('blog.create')}}" class="nav-link">
+                                Ajouter un sujet
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('blog.index') }}" class="nav-link">
+                                Liste Blogs
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
 
 
 
