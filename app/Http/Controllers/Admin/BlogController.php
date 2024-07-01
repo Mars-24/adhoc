@@ -7,6 +7,8 @@ use App\Models\Category_blog;
 use App\Models\Post;
 use App\Models\Tags;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManager;
+
 
 class BlogController extends Controller
 {
@@ -55,8 +57,12 @@ class BlogController extends Controller
             $destination_path = 'public/uploads/blog_images';
             $file = $request->file('image');
             $file_name_hash = $file->hashName();
-            $file_name = $file->getClientOriginalName();
-            $path = $request->file('image')->storeAs($destination_path, $file_name_hash);
+
+            $image = ImageManager::imagick()->read($file);
+
+            // resize to 300 x 200 pixel
+            $photo = $image->resize(600, 450);
+            $photo->save(storage_path('app/' . $destination_path . '/' . $file_name_hash));           
             $data['image'] =$file_name_hash;
 
             //dd($file_image);

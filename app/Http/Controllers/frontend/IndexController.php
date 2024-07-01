@@ -31,7 +31,9 @@ class IndexController extends Controller
         return view('frontend.pages.service');
     }
     public function portfolio(){
-        return view('frontend.pages.portfolio');
+        $portfolios = Portfolio::orderBy('id','Desc')->paginate(15);
+
+        return view('frontend.pages.portfolio',compact('portfolios'));
     }
    
 

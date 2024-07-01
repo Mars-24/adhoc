@@ -41,148 +41,67 @@
 					</div>
 					<div class="portfolio-list-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
 						<div class="portfoliolist bydefault_show" id="portfoliolist">
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img1.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
+							@foreach ($portfolios as $portfolio)
+								<div class="portfolio {{$portfolio->slug}}" data-cat=".{{$portfolio->slug}}">
+									<div class="portfolio-wrapper">
+										<div class="portfolio-img back-img" style="background-image: url('/storage/uploads/files/{{$portfolio->photo}}')"></div>
+										<div class="portfolio-wrapper-text">
+												@if ($portfolio->slug=='graphic-design')
+												<h3 class="h3-title">Concèption Graphique</h3>
+												<p>Concèption, Graphique</p>													
+												@elseif ($portfolio->slug=='mobile-app')
+												<h3 class="h3-title">Shooting Photo</h3>
+												<p>Shooting, Photo</p>
+												@elseif ($portfolio->slug=='web-design')
+												<h3 class="h3-title">Creation de site web</h3>
+												<p>Site Web</p>
+												@endif
+											{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img2.png') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img3.png') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img7.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img9.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img8.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img10.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img11.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img12.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img13.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio graphic-design" data-cat=".graphic-design">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img14.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Concèption Graphique</h3>
-										<p>Concèption, Graphique</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio mobile-app" data-cat=".mobile-app">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img4.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Shooting Photo</h3>
-										<p>Shooting, Photo</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio mobile-app" data-cat=".mobile-app">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img5.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Shooting Photo</h3>
-										<p>Shooting, Photo</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
-							<div class="portfolio mobile-app" data-cat=".mobile-app">
-								<div class="portfolio-wrapper">
-									<div class="portfolio-img back-img" style="background-image: url('{{ asset('frontend/images/portfolio-img6.jpg') }}')"></div>
-									<div class="portfolio-wrapper-text">
-										<h3 class="h3-title">Shooting Photo</h3>
-										<p>Shooting, Photo</p>
-										{{-- <a href="portfolio-detail.html" title="View More"><i class="fa fa-search" aria-hidden="true"></i></a> --}}
-									</div>
-								</div>
-							</div>
+								@endforeach		
 						</div>
 					</div>
+					<div class="row">
+                        <div class="col-12">
+                            <div
+                                class="pagination wow fadeup-animation"
+                                data-wow-duration="1s"
+                                data-wow-delay="0.2s"
+                            >
+                                <ul>
+                                    <li>
+                                        <a
+                                            href="javascript:void(0);"
+                                            class="arrow"
+                                            title="Previous"
+                                            ><img
+                                                src="{{asset('frontend/images/right-arrow.svg')}}"
+                                                alt="Arrow"
+                                        /></a>
+                                    </li>
+                                    <li><a href="javascript:void(0);">1</a></li>
+                                    <li><a href="javascript:void(0);">2</a></li>
+                                    <li class="active">
+                                        <a href="javascript:void(0);">3</a>
+                                    </li>
+                                    <li><a href="javascript:void(0);">4</a></li>
+                                    <li><a href="javascript:void(0);">5</a></li>
+                                    <li>
+                                        <a
+                                            href="javascript:void(0);"
+                                            class="arrow"
+                                            title="Next"
+                                            ><img
+                                                src="{{asset('frontend/images/right-arrow.svg')}}"
+                                                alt="Arrow"
+                                        /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>

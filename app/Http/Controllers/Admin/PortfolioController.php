@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Portfolio;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManager;
+
 
 class PortfolioController extends Controller
 {
@@ -48,14 +50,18 @@ class PortfolioController extends Controller
                 ],$messages);
 
                 $data = $request->all();
-                $file_image = [];
                 $data['slug']=Category::find($data['cat_id'])->slug;
                 if ($request->has('photo')) {
                     $destination_path = 'public/uploads/files';
                     $file = $request->file('photo');
                     $file_name_hash = $file->hashName();
-                    $file_name = $file->getClientOriginalName();
-                    $path = $request->file('photo')->storeAs($destination_path, $file_name_hash);
+                    $image = ImageManager::imagick()->read($file);
+
+                    // resize to 300 x 200 pixel
+                    $photo = $image->resize(600, 450);
+                    $photo->save(storage_path('app/' . $destination_path . '/' . $file_name_hash));
+
+                    // $path = $request->file('photo')->storeAs($destination_path, $file_name_hash);
                     $data['photo'] =$file_name_hash;
         
                     //dd($file_image);
