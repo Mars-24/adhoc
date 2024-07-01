@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master') @section('content')
     <!-- Banner Start -->
     <section class="main-banner inner-banner">
-        <span class="inner-banner-bg back-img" style="background-image: url('assets/images/blog-bg.jpg');"></span>
+        <span class="inner-banner-bg back-img" style="background-image: url('{{ asset('frontend/images/13.jpg') }}');"></span>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -29,11 +29,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="services-sm-image w-img mb-45"><img src="{{ asset('frontend/images/services-d1.jpg') }}"
+                    <div class="services-sm-image w-img mb-45"><img src="{{ asset('frontend/images/14.jpg') }}"
                             alt="services-sm-img"></div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="services-sm-image w-img mb-45"><img src="{{ asset('frontend/images/services-d2.jpg') }}"
+                    <div class="services-sm-image w-img mb-45"><img src="{{ asset('frontend/images/15.jpg') }}"
                             alt="services-sm-img"></div>
                 </div>
             </div>
