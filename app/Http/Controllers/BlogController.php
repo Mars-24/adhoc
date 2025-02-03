@@ -12,29 +12,59 @@ use App\Models\Comment;
 
 class BlogController extends Controller
 {
-    public function index(){
-        
+    public function index()
+    {
     }
 
-    public function blog_list(){
-        $recents = Post::orderBy('id','Desc')->take(4)->get();
+    public function blog_list()
+    {
+        $recents = Post::orderBy('id', 'Desc')->take(4)->get();
         $categories = Category_blog::all();
-        $blogs=Post::orderBy('id','Desc')->paginate(8);
-        return view('frontend.pages.blog-list',compact('blogs','categories','recents'));
+        $blogs = Post::orderBy('id', 'Desc')->paginate(10);
+        return view('frontend.pages.blog-list', compact('blogs', 'categories', 'recents'));
     }
-    public function blog_detail($id){
-        $blog = Post::where('id',$id)->first();
-        $recents = Post::orderBy('id','Desc')->take(4)->get();
-        $tags= Tags::all();
-        $comments = Comment::where('post_id',$id)->orderBy('created_at','desc')->take(3)->get();
 
-        // return dd($blog);
+    public function search(Request $request)
+    {
+        $query = $request->get('query');
+        $tag = $request->get('tag');
+
+
+        if ($query) {
+            $blogs = Post::where('title', 'like', '%' . $query . '%')->get();
+        } elseif ($tag) {
+            $tag = Tags::where('title', $tag)->first();
+            if ($tag) {
+                $blogs = $tag->posts;
+            } else {
+                $blogs = collect();
+            }
+        } else {
+            $blogs = Post::all();
+        }
+
+        return response()->json($blogs);
+    }
+    public function blog_detail($id)
+    {
+        $blog = Post::where('id', $id)->first();
+        $recents = Post::orderBy('id', 'Desc')->take(4)->get();
+        $tags = Tags::all();
+        $comments = Comment::where('post_id', $id)->orderBy('created_at', 'desc')->take(3)->get();
+
         $categories = Category_blog::all();
-        // $blogs=Post::orderBy('id','Desc')->paginate(8);
-        return view('frontend.pages.blog-detail',compact('blog','recents','categories','tags','comments'));
+        // Récupérer les tags associés au blog
+        $blogTags = $blog->tags->pluck('id');
+
+        // Récupérer les posts ayant les mêmes tags, exclure le post actuel
+        $relatedPosts = Post::whereHas('tags', function ($query) use ($blogTags) {
+            $query->whereIn('tags.id', $blogTags);
+        })->where('id', '!=', $blog->id)->take(2)->get();
+        return view('frontend.pages.blog-detail', compact('blog', 'recents', 'categories', 'tags', 'comments','relatedPosts'));
     }
 
-    public function blog_comment(Request $request,$id){
+    public function blog_comment(Request $request, $id)
+    {
         // $messages=[
         //     'title.required' => 'Veuillez saisir le titre de votre sujet',
         //     'message.required' => 'Veuillez saisir votre message',
@@ -54,13 +84,13 @@ class BlogController extends Controller
         $comment->message = $request->input('message');
         $comment->email = $request->input('email'); // Assurez-vous que l'utilisateur est authentifié
         $comment->name = $request->input('name'); // Assurez-vous que l'utilisateur est authentifié
-       
-        $status= $comment->save();
+
+        $status = $comment->save();
 
         if ($status) {
-            return redirect()->route('blog-list')->with('success','Sujet de blog crée avec success');
+            return redirect()->route('blog-list')->with('success', 'Sujet de blog crée avec success');
         } else {
-            return back()->with('error','Erreur lors de la creation du sujet de blog');
+            return back()->with('error', 'Erreur lors de la creation du sujet de blog');
         }
         return dd($comment);
     }

@@ -7,6 +7,7 @@
     <meta name="keywords" content="adhoc" />
     <meta name="description" content="adhoc" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="p:domain_verify" content="2bf55081d98ff43ac9e8046e783a510d"/>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  
     <meta name="description"
     content="adhoc a pour mission d'accompagner et de guider tous types d'entreprises à la recherche des meilleures stratégies visuelles et digitales pour atteindre ses objectifs.">
@@ -145,7 +146,7 @@
         <footer class="site-footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    {{-- <div class="col-12">
                         <div class="newsletter-box">
                             <div class="title-box">
                                 <div class="title wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
@@ -170,7 +171,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="row justify-content-lg-between">
                     <div class="col-lg-3 wow right-animation" data-wow-duration="1s" data-wow-delay="0.2s">
@@ -182,7 +183,7 @@
                             </div>
                             <div class="footer-contact-link">
                                 <div class="contact-link-box">
-                                    <a href="tel:0022892666801" title="Call on +228 92 66 68 01"><img
+                                    <a href="tel:0022892666801" title="appelez sur le +228 92 66 68 01"><img
                                             src="{{ asset('frontend/images/call-icon.svg') }}" alt="Call">+228 92
                                         66 68 01</a>
                                 </div>
@@ -279,6 +280,8 @@
     <!-- Custom JS Link -->
     <script src="{{ asset('frontend/js/custom.js') }}"></script>
     <script src="{{ asset('frontend/js/custom-scroll-count.js') }}"></script>
+    @yield('script')
+
 
 </body>
 

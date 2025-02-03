@@ -44,7 +44,7 @@
 							@foreach ($portfolios as $portfolio)
 								<div class="portfolio {{$portfolio->slug}}" data-cat=".{{$portfolio->slug}}">
 									<div class="portfolio-wrapper">
-										<div class="portfolio-img back-img" style="background-image: url('/storage/uploads/files/{{$portfolio->photo}}')"></div>
+										<div class="portfolio-img back-img" style="background-image: url('{{ asset('storage/' . $portfolio->photo) }}')"></div>
 										<div class="portfolio-wrapper-text">
 												@if ($portfolio->slug=='graphic-design')
 												<h3 class="h3-title">Concèption Graphique</h3>
@@ -70,35 +70,8 @@
                                 data-wow-duration="1s"
                                 data-wow-delay="0.2s"
                             >
-                                <ul>
-                                    <li>
-                                        <a
-                                            href="javascript:void(0);"
-                                            class="arrow"
-                                            title="Previous"
-                                            ><img
-                                                src="{{asset('frontend/images/right-arrow.svg')}}"
-                                                alt="Arrow"
-                                        /></a>
-                                    </li>
-                                    <li><a href="javascript:void(0);">1</a></li>
-                                    <li><a href="javascript:void(0);">2</a></li>
-                                    <li class="active">
-                                        <a href="javascript:void(0);">3</a>
-                                    </li>
-                                    <li><a href="javascript:void(0);">4</a></li>
-                                    <li><a href="javascript:void(0);">5</a></li>
-                                    <li>
-                                        <a
-                                            href="javascript:void(0);"
-                                            class="arrow"
-                                            title="Next"
-                                            ><img
-                                                src="{{asset('frontend/images/right-arrow.svg')}}"
-                                                alt="Arrow"
-                                        /></a>
-                                    </li>
-                                </ul>
+							{{ $portfolios->links('vendor.pagination.custom') }}
+
                             </div>
                         </div>
                     </div>

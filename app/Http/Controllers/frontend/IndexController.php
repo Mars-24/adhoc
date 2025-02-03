@@ -8,9 +8,8 @@ use App\Models\Category_blog;
 use App\Models\Comment;
 use App\Models\Message;
 use App\Models\Portfolio;
-use App\Models\Post;
-use App\Models\User;
-use App\Models\Tags;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MyMail;
 
 use Illuminate\Http\Request;
 
@@ -78,10 +77,23 @@ class IndexController extends Controller
             'phone'=>'string|required',
             'message'=>'required',
             
-            ],$message);
+           ],$message);
 
             $data = $request->all();
+            return dd( $request->all());
             $status = Message::create($data);
+            $details = [
+                'subject' => 'Nouveau message de ' . $request->input('name'),
+                'body' => 'Nom: ' . $request->input('name') . ' ' . $request->input('prenoms') . '<br>' .
+                          'Email: ' . $request->input('email') . '<br>' .
+                          'Téléphone: ' . $request->input('phone') . '<br>' .
+                          'Message: ' . $request->input('message')
+            ];
+            Mail::send([], [], function ($mail) use ($details) {
+                $mail->to('infos@adhoc.tg')
+                     ->subject($details['subject'])
+                     ->setBody($details['body'], 'text/html'); // Spécifier que le corps est au format HTML
+            });
 
             if($status){
                 return back()->with('success','Message bien envoyé Merci');

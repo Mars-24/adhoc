@@ -7,7 +7,10 @@
 			<div class="row">
 				<div class="col-lg-6 order-lg-1 order-2 wow right-animation" data-wow-duration="1s" data-wow-delay="0.3s">
 					<div class="banner-img-box">
-						<img src="{{ asset('frontend/images/banner-man.png') }}" alt="adhoc Man">
+						<picture>
+							<source srcset="{{ asset('frontend/images/banner-man.webp') }} 1x" type="image/webp">
+								<img src="{{ asset('frontend/images/banner-man.png') }}" alt="adhoc Man">
+						</picture>
 						<span class="about-shape1">
 							<img width="340" height="188" src="{{ asset('frontend/images/client-satisfaction.svg') }}" alt="adhoc Client Satisfaction">
 						</span>
@@ -91,7 +94,7 @@
 							@foreach ($portfolios as $portfolio)
 								<div class="portfolio {{$portfolio->slug}}" data-cat=".{{$portfolio->slug}}">
 									<div class="portfolio-wrapper">
-										<div class="portfolio-img back-img" style="background-image: url('/storage/uploads/files/{{$portfolio->photo}}')"></div>
+										<div class="portfolio-img back-img" style="background-image: url('{{ asset('storage/' . $portfolio->photo) }}')"></div>
 										<div class="portfolio-wrapper-text">
 												@if ($portfolio->slug=='graphic-design')
 												<h3 class="h3-title">Concèption Graphique</h3>

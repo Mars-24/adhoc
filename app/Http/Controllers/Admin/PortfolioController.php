@@ -52,7 +52,7 @@ class PortfolioController extends Controller
                 $data = $request->all();
                 $data['slug']=Category::find($data['cat_id'])->slug;
                 if ($request->has('photo')) {
-                    $destination_path = 'public/uploads/files';
+                    $destination_path = 'public';
                     $file = $request->file('photo');
                     $file_name_hash = $file->hashName();
                     $image = ImageManager::imagick()->read($file);

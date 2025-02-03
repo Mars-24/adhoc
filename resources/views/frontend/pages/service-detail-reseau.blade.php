@@ -25,16 +25,28 @@
     <!-- Banner End -->
 
     <!-- Service Detail Start -->
-    <div class="services-details-area pt-140 pb-105">
+    <div class="services-details-area pt-50 pb-105">
         <div class="container">
-            <div class="row">
+            <div class="row image-service">
                 <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="services-sm-image w-img mb-45"><img src="{{ asset('frontend/images/5.jpg') }}"
-                            alt="services-sm-img"></div>
+                    <div class="services-sm-image w-img mb-45">
+                        
+                        <picture>
+                            <source srcset="{{ asset('frontend/images/5.webp') }} 1x" type="image/webp">
+                            <img src="{{ asset('frontend/images/5.jpg') }}"
+                            alt="services-sm-img">
+                           </picture>
+                        
+                        </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="services-sm-image w-img mb-45"><img src="{{ asset('frontend/images/6.jpg') }}"
-                            alt="services-sm-img"></div>
+                    <div class="services-sm-image w-img mb-45">
+                        <picture>
+                            <source srcset="{{ asset('frontend/images/6.webp') }} 1x" type="image/webp">
+                            <img src="{{ asset('frontend/images/6.jpg') }}"
+                            alt="services-sm-img">
+                           </picture>
+                        </div>
                 </div>
             </div>
             <div class="row">
@@ -84,43 +96,6 @@
                                 permettra d'atteindre vos objectifs de communication de manière efficace et rentable. Faites
                                 confiance à adhoc pour optimiser votre présence en ligne et renforcer votre relation avec votre
                                 public cible.</p>
-
-                    <div class="row mt-70">
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="step-item text-center mb-30">
-                                <div class="step-number-wrapper"><span class="step-number">01</span></div>
-                                <h6 class="step-title mt-40">Step One</h6>
-                                <p>Sed quia non numquam eius <br> modi tempora incidunt s</p>
-                                <div class="step-item-shape shape-1"><img src="assets/img/shape/arrow-shape-1.png"
-                                        alt="arrow-shape"></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="step-item text-center mb-30">
-                                <div class="step-number-wrapper"><span class="step-number">02</span></div>
-                                <h6 class="step-title mt-40">Step Two</h6>
-                                <p>Sed quia non numquam eius <br> modi tempora incidunt s</p>
-                                <div class="step-item-shape shape-1 d-none d-lg-block"><img
-                                        src="assets/img/shape/arrow-shape-2.png" alt="arrow-shape"></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="step-item text-center mb-30">
-                                <div class="step-number-wrapper"><span class="step-number">03</span></div>
-                                <h6 class="step-title mt-40">Step Three</h6>
-                                <p>Sed quia non numquam eius <br> modi tempora incidunt s</p>
-                                <div class="step-item-shape shape-1"><img src="assets/img/shape/arrow-shape-1.png"
-                                        alt="arrow-shape"></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="step-item text-center mb-30">
-                                <div class="step-number-wrapper"><span class="step-number">04</span></div>
-                                <h6 class="step-title mt-40">Step Four</h6>
-                                <p>Sed quia non numquam eius <br> modi tempora incidunt s</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

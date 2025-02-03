@@ -28,6 +28,8 @@ Route::get('service/brand-management/',[App\Http\Controllers\frontend\IndexContr
 Route::get('contact/',[App\Http\Controllers\frontend\IndexController::class,'contact'])->name('contact');
 Route::get('portfolio/',[App\Http\Controllers\frontend\IndexController::class,'portfolio'])->name('portfolio');
 Route::get('blog-list/',[App\Http\Controllers\BlogController::class,'blog_list'])->name('blog-list');
+Route::get('/search-blogs', [App\Http\Controllers\BlogController::class,'search'])->name('search-blogs');
+
 Route::get('blog-detail/{id}/',[App\Http\Controllers\BlogController::class,'blog_detail'])->name('blog-detail');
 Route::post('comment/{id}/store',[App\Http\Controllers\BlogController::class,'blog_comment'])->name('blog_comment');
 

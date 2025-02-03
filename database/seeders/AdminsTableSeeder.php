@@ -18,8 +18,8 @@ class AdminsTableSeeder extends Seeder
         DB::table('admins')->insert([
             [
                 'fullname'=>'Adhoc Admin',
-                'email'=>'admin@gmail.com',
-                'password'=>Hash::make('111111'),
+                'email'=>'aagenceadhoc@ebusiness.tg',
+                'password'=>Hash::make('6ccee5e0a095'),
             ],
         ]);
 

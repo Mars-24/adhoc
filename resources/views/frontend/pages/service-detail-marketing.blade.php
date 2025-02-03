@@ -25,16 +25,26 @@
     <!-- Banner End -->
 
     <!-- Service Detail Start -->
-    <div class="services-details-area pt-140 pb-105">
+    <div class="services-details-area pt-50 pb-105">
         <div class="container">
-            <div class="row">
+            <div class="row image-service">
                 <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="services-sm-image w-img mb-45"><img src="{{ asset('frontend/images/14.jpg') }}"
-                            alt="services-sm-img"></div>
+                    <div class="services-sm-image w-img mb-45">
+                        <picture>
+                            <source srcset="{{ asset('frontend/images/14.webp') }} 1x" type="image/webp">
+                            <img src="{{ asset('frontend/images/14.jpg') }}"
+                            alt="services-sm-img">
+                           </picture>
+                        </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="services-sm-image w-img mb-45"><img src="{{ asset('frontend/images/15.jpg') }}"
-                            alt="services-sm-img"></div>
+                    <div class="services-sm-image w-img mb-45">
+                        <picture>
+                            <source srcset="{{ asset('frontend/images/15.webp') }} 1x" type="image/webp">
+                            <img src="{{ asset('frontend/images/15.jpg') }}"
+                            alt="services-sm-img">
+                           </picture>
+                        </div>
                 </div>
             </div>
             <div class="row">

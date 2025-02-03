@@ -1,27 +1,25 @@
 @extends('backend.layouts.master')
 
 @section('content')
-
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Editer Banniere</h1>
+                    <h1>Modifier blog</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('admin')}}">Accueil</a></li>
-                        <li class="breadcrumb-item"><a href="{{route('banner.index')}}">Banniere</a></li>
-                        <li class="breadcrumb-item active">Editer Bannieres</li>
+                        <li class="breadcrumb-item active">Blog</li>
+                        <li class="breadcrumb-item active">Modifier Blog</li>
                     </ol>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
     </div>
-    <!-- /.container-fluid -->
+
 
     <!-- Main content -->
     <section class="content">
@@ -45,97 +43,105 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Edit Banniere</h3>
+                            <h3 class="card-title">Modifier un Sujet</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{route('banner.update',$banner->id)}}" method="POST">
+                        <form action="{{route('blog.update',$blog->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('patch')
+                            @csrf
                             <div class="card-body">
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <label>Titre</label>
-                                        <input class="form-control" type="text" name="title" placeholder="Title"
-                                            value="{{$banner->title}}">
+                                        <input class="form-control" type="text" name="title" placeholder="Title" value="{{$blog->title}}"
+                                           >
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
-                                        <label>Photo</label>
-
+                                        <label class="custom-file-upload">Photo</label>
                                         <div class="input-group">
-                                            <span class="input-group-btn">
-                                                <a id="lfm" data-input="thumbnail" data-preview="holder"
-                                                    class="btn btn-primary">
-                                                    <i class="fa fa-picture-o"></i> Choose
-                                                </a>
-                                            </span>
-                                            <input id="thumbnail" class="form-control" type="text" name="photo"
-                                                value="{{$banner->photo}}">
+                                            <input id="thumbnail" class="form-control" type="file" name="image" value="{{$blog->image}}">
                                         </div>
                                         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
-                                        <label>Description</label>
-                                        <textarea class="form-control" rows="4" name="description"
-                                            placeholder="Write some text ...">{{$banner->description}}</textarea>
+                                        <label>Message</label>
+                                        <textarea id="compose-textarea" style="height: 2000px" class="form-control" rows="4" name="message"
+                                            placeholder="Write some text ...">{{$blog->message}}</textarea>
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <label for="">Condition <span class="text-danger">*</span></label>
-                                        <select name="condition" id="" class="form-control show-tick">
-                                            <option value="">-- Conditions --</option>
-                                            <option value="banner" {{$banner->condition=='banner' ?
-                                                'selected':''}}>Banner</option>
-                                            <option value="promo" {{$banner->condition=='promo' ?
-                                                'selected':''}}>Promote</option>
+                                        <label for="" class="form-label select-label">Tags <span class="text-danger">*</span></label>
+                                        <select name="tags[]" id="" class="select form-control show-tick" multiple>
+                                            @foreach ($tags as $tag )
+                                            <option value="{{$tag->id}}" >{{$tag->title}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
-
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <label for="">Category <span class="text-danger">*</span></label>
+                                        <select name="category_id" id="" class="form-control show-tick">
+                                            <option value="">-- Category --</option>
+                                            @foreach ($categories as $categorie )
+                                            <option value="{{$categorie->id}}">{{$categorie->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                             
                             </div>
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Update</button>
+                                <button type="submit" class="btn btn-primary">Enregistrer</button>
                             </div>
                         </form>
                     </div>
-
 
                 </div>
 
             </div>
         </div><!-- /.container-fluid -->
     </section>
-    @endsection
+</div>
+@endsection
 
-    @section('script')
+@section('script')
 
-    <script src="{{asset('vendor/laravel-filemanager/js/stand-alone-button.js')}}"></script>
 
-    <script>
-        $('#lfm').filemanager('image');
-    </script>
 
-    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 
-    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <!-- bs-custom-file-input -->
-    <script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{asset('backend/dist/js/adminlte.min.js')}}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('backend/dist/js/demo.js')}}"></script>
-    <!-- Page specific script -->
-    <script>
-        $(function () {
-            bsCustomFileInput.init();
-        });
-    </script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-    @endsection
+<!-- bs-custom-file-input -->
+<script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('backend/dist/js/adminlte.min.js')}}"></script>
+<script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="{{asset('backend/dist/js/demo.js')}}"></script>
+<!-- Page specific script -->
+<script>
+    $(function () {
+      //Add text editor
+      $('#compose-textarea').summernote({
+  height: 150,   //set editable area's height
+})
+    })
+  </script>
+<script>
+    $(function () {
+        bsCustomFileInput.init();
+    });
+</script>
+@endsection

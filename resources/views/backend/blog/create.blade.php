@@ -77,7 +77,7 @@
                                 <div class="form-group">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <label for="" class="form-label select-label">Tags <span class="text-danger">*</span></label>
-                                        <select name="tag_id[]" id="" class="select form-control show-tick" multiple>
+                                        <select name="tags[]" id="" class="select form-control show-tick" multiple>
                                             @foreach ($tags as $tag )
                                             <option value="{{$tag->id}}" >{{$tag->title}}</option>
                                             @endforeach

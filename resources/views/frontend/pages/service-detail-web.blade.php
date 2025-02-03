@@ -25,16 +25,26 @@
     <!-- Banner End -->
 
     <!-- Service Detail Start -->
-    <div class="services-details-area pt-140 pb-105">
+    <div class="services-details-area pt-50 pb-105">
         <div class="container">
-            <div class="row">
+            <div class="row image-service">
                 <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="services-sm-image w-img mb-45"><img src="{{ asset('frontend/images/8.jpg') }}"
-                            alt="services-sm-img"></div>
+                    <div class="services-sm-image w-img mb-45">
+                       <picture>
+                        <source srcset="{{ asset('frontend/images/8.webp') }} 1x" type="image/webp">
+                        <img src="{{ asset('frontend/images/8.jpg') }}"
+                        alt="services-sm-img">
+                       </picture>
+                        </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="services-sm-image w-img mb-45"><img src="{{ asset('frontend/images/9.jpg') }}"
-                            alt="services-sm-img"></div>
+                    <div class="services-sm-image w-img mb-45">
+                        <picture>
+                            <source srcset="{{ asset('frontend/images/9.webp') }} 1x" type="image/webp">
+                            <img src="{{ asset('frontend/images/9.jpg') }}"
+                            alt="services-sm-img">
+                           </picture>
+                        </div>
                 </div>
             </div>
             <div class="row">
@@ -43,7 +53,7 @@
                     <p class="services-text mb-25"> Un outil efficace pour votre entreprise, un site web bien conçu et optimisé vous permet d’être
                         visible en ligne, d’accroître votre crédibilité et d’améliorer l’image de marque de votre
                         entreprise. La présence en ligne est essentielle pour les entreprises de toutes tailles de nos
-                        jours. <br>Voici quelques avantages d’avoir un site web : </p>
+                        jours. <br>Voici quelques avantages d’avoir un site web : </p>
                     <h5 class="services-sm-title mb-25"> Accessibilité 24/7</h5>
 
                     <p class="services-text mb-45"> L'un des avantages majeurs d'avoir un site web est qu'il permet à votre entreprise d'être accessible

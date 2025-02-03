@@ -55,7 +55,7 @@
                                         <td>{{$item->title}} </td>
                                         <td>{{$item->description}}</td>
                                         <td>
-                                            <img src="/storage/uploads/files/{{$item->photo}}" alt="banner-image"
+                                            <img src="{{ asset('storage/' . $item->photo) }}" alt="banner-image"
                                                 style="max-width: 120px ; max-height : 90px">
                                         </td>
                                         <td>{{$item->description}}</td>

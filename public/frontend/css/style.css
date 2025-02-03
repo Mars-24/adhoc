@@ -63,6 +63,9 @@ Theme Version: 1.0
 .pt-140 {
     padding-top: 140px;
 }
+.pt-50 {
+    padding-top: 50px;
+}
 .mb-25 {
     margin-bottom: 25px;
 }
@@ -4176,6 +4179,9 @@ select.form-input {
     .portfolio-detail-img,
     .google-map {
         height: 320px;
+    }
+    .services-details-area .image-service{
+        display:none;
     }
 }
 

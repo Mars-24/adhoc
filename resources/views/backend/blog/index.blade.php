@@ -54,16 +54,16 @@
                                         <td>{{$item->title}} </td>
                                         <td>{{$item->message}}</td>
                                         <td>
-                                            <img src="/storage/uploads/files/{{$item->image}}" alt="banner-image"
+                                            <img src="{{ asset('storage/' . $item->image) }}" alt="banner-image"
                                                 style="max-width: 120px ; max-height : 90px">
                                         </td>
                                         <td>{{$item->category_id}}</td>
                                         <td>
-                                            <a href="#" data-toggle="tooltip"
+                                            <a href="{{route('blog.edit',$item->id)}}" data-toggle="tooltip"
                                                 title="edit" data-placement="bottom"
                                                 class="float-left btn btn-sm btn-outline-warning"><i
                                                     class="fas fa-edit"></i></a>
-                                            <form class="float-left" action="{{route('portfolio.destroy',$item->id)}}"
+                                            <form class="float-left" action="{{route('blog.destroy',$item->id)}}"
                                                 method="POST">
                                                 @csrf
                                                 @method('delete')

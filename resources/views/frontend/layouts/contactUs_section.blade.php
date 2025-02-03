@@ -16,6 +16,7 @@
                     <h2 class="h2-title">Contactez-nous pour toute information</h2>
                     <div class="contact-form">
                         <form action="{{ route('message') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-box">

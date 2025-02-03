@@ -1,9 +1,10 @@
-@extends('frontend.layouts.master') @section('content')
+@extends('frontend.layouts.master') 
+@section('content')
 <!-- Banner Start -->
 <section class="main-banner inner-banner">
     <span
         class="inner-banner-bg back-img"
-        style="background-image: url('assets/images/blog-bg.jpg')"
+        style="background-image: url('{{ asset('frontend/images/blog-bg.png') }}');"
     ></span>
     <div class="container">
         <div class="row">
@@ -14,7 +15,7 @@
                         data-wow-duration="1s"
                         data-wow-delay="0.2s"
                     >
-                        Notre blog
+                        Blog
                     </h1>
                     <div
                         class="breadcrumb-box wow fadeup-animation"
@@ -43,219 +44,37 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <div class="row">
-                    @if (count($blogs)>0)
-                     @foreach ($blogs as $blog )
-
-                    <div class="col-lg-6 wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div
-                            class="blog-post back-img"
-                            style="
-                                background-image: url('{{asset("/storage/uploads/blog_images/$blog->image")}}');
-                            "
-                        >
-                            <span
-                                class="blog-date"
-                                >{{ \Carbon\Carbon::parse($blog->created_at)->isoFormat('MMM D, YYYY')}}</span
-                            >
-                            <div class="blog-post-text">
-                                <h3 class="h3-title">{{$blog->title}}</h3>
-                                <a
-                                    href="{{route('blog-detail',["id"=>$blog->id])}}"
-                                    class="read-more"
-                                    title="Read More"
-                                    >Voir plus</a
+                <div class="row" id="blog-list">
+                    @if ($blogs->count() > 0)
+                        @foreach ($blogs as $blog)
+                            <div class="col-lg-6 wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
+                                <div
+                                    class="blog-post back-img"
+                                    style="background-image: url('{{ asset('storage/'.$blog->image) }}');"
                                 >
+                                    <span class="blog-date">
+                                        {{ \Carbon\Carbon::parse($blog->created_at)->isoFormat('MMM D, YYYY') }}
+                                    </span>
+                                    <div class="blog-post-text">
+                                        <h3 class="h3-title">{{ $blog->title }}</h3>
+                                        <a href="{{ route('blog-detail', ['id' => $blog->id]) }}" class="read-more" title="Read More">Voir plus</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div
-                                class="pagination wow fadeup-animation"
-                                data-wow-duration="1s"
-                                data-wow-delay="0.2s"
-                            >
-                                <ul>
-                                    <li>
-                                        <a
-                                            href="javascript:void(0);"
-                                            class="arrow"
-                                            title="Previous"
-                                            ><img
-                                                src="{{asset('frontend/images/right-arrow.svg')}}"
-                                                alt="Arrow"
-                                        /></a>
-                                    </li>
-                                    <li><a href="javascript:void(0);">1</a></li>
-                                    <li><a href="javascript:void(0);">2</a></li>
-                                    <li class="active">
-                                        <a href="javascript:void(0);">3</a>
-                                    </li>
-                                    <li><a href="javascript:void(0);">4</a></li>
-                                    <li><a href="javascript:void(0);">5</a></li>
-                                    <li>
-                                        <a
-                                            href="javascript:void(0);"
-                                            class="arrow"
-                                            title="Next"
-                                            ><img
-                                                src="{{asset('frontend/images/right-arrow.svg')}}"
-                                                alt="Arrow"
-                                        /></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                     @else
-                        <h3 class="h3-title"> Aucun Poste  </h3>
-                     @endif 
-                     {{--
-
-                    <div
-                        class="col-lg-6 wow fadeup-animation"
-                        data-wow-duration="1s"
-                        data-wow-delay="0.2s"  >
-                        <div
-                            class="blog-post back-img"
-                            style="
-                                background-image: url('assets/images/blog-img3.jpg');
-                            "
-                        >
-                            <span class="blog-date">May 1, 2021</span>
-                            <div class="blog-post-text">
-                                <h3 class="h3-title">
-                                    It is a long established fact that a reader
-                                    will be distracted
-                                </h3>
-                                <a
-                                    href="blog-detail.html"
-                                    class="read-more"
-                                    title="Read More"
-                                    >Read More</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="col-lg-6 wow fadeup-animation"
-                        data-wow-duration="1s"
-                        data-wow-delay="0.2s" >
-                        <div
-                            class="blog-post back-img"
-                            style="
-                                background-image: url('assets/images/blog-img4.jpg');
-                            "
-                        >
-                            <span class="blog-date">May 1, 2021</span>
-                            <div class="blog-post-text">
-                                <h3 class="h3-title">
-                                    It is a long established fact that a reader
-                                    will be distracted
-                                </h3>
-                                <a
-                                    href="blog-detail.html"
-                                    class="read-more"
-                                    title="Read More"
-                                    >Read More</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="col-lg-6 wow fadeup-animation"
-                        data-wow-duration="1s"
-                        data-wow-delay="0.2s">
-                        <div
-                            class="blog-post back-img"
-                            style="
-                                background-image: url('assets/images/blog-img5.jpg');
-                            "
-                        >
-                            <span class="blog-date">May 1, 2021</span>
-                            <div class="blog-post-text">
-                                <h3 class="h3-title">
-                                    It is a long established fact that a reader
-                                    will be distracted
-                                </h3>
-                                <a
-                                    href="blog-detail.html"
-                                    class="read-more"
-                                    title="Read More"
-                                    >Read More</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="col-lg-6 wow fadeup-animation"
-                        data-wow-duration="1s"
-                        data-wow-delay="0.2s" >
-                        <div
-                            class="blog-post back-img"
-                            style="
-                                background-image: url('assets/images/blog-img6.jpg');
-                            "
-                        >
-                            <span class="blog-date">May 1, 2021</span>
-                            <div class="blog-post-text">
-                                <h3 class="h3-title">
-                                    It is a long established fact that a reader
-                                    will be distracted
-                                </h3>
-                                <a
-                                    href="blog-detail.html"
-                                    class="read-more"
-                                    title="Read More"
-                                    >Read More</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="col-lg-6 wow fadeup-animation"
-                        data-wow-duration="1s"
-                        data-wow-delay="0.2s" >
-                        <div class="blog-post no-img">
-                            <span class="blog-date">May 1, 2021</span>
-                            <div class="blog-post-text">
-                                <h3 class="h3-title">
-                                    It is a long established fact that a reader
-                                    will be distracted
-                                </h3>
-                                <a
-                                    href="blog-detail.html"
-                                    class="read-more"
-                                    title="Read More"
-                                    >Read More</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="col-lg-6 wow fadeup-animation"
-                        data-wow-duration="1s"
-                        data-wow-delay="0.2s" >
-                        <div class="blog-post no-img">
-                            <span class="blog-date">May 1, 2021</span>
-                            <div class="blog-post-text">
-                                <h3 class="h3-title">
-                                    It is a long established fact that a reader
-                                    will be distracted
-                                </h3>
-                                <a
-                                    href="blog-detail.html"
-                                    class="read-more"
-                                    title="Read More"
-                                    >Read More</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    --}}
+                        @endforeach
+                    @else
+                        <h3 class="h3-title">Aucun Poste</h3>
+                    @endif
                 </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pagination wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
+                            {{ $blogs->links('vendor.pagination.custom') }}
+                        </div>
+                    </div>
+                </div>
+                
                
             </div>
             <div class="col-lg-4">
@@ -268,10 +87,11 @@
                         <div class="title left">
                             <span class="sub-title">Recherche</span>
                         </div>
-                        <form>
+                        <form id="search-form">
                             <div class="form-box">
                                 <input
                                     type="text"
+                                    id="search"
                                     class="form-input"
                                     placeholder="Rechercher ici..."
                                     required
@@ -300,7 +120,7 @@
                             <div
                                 class="recent-img back-img"
                                 style="
-                                    background-image: url('{{asset("/storage/uploads/blog_images/$recent->image")}}');
+                                    background-image: url('{{asset("/storage/$recent->image")}}');
                                 "
                             ></div>
                             <div class="recent-text">
@@ -337,39 +157,7 @@
                                 >
                             </li>
 
-                            @endforeach {{--
-                            <li>
-                                <a
-                                    href="javascript:void(0);"
-                                    title="Graphic Design"
-                                    >Graphic Design <span>10</span></a
-                                >
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" title="Web Design"
-                                    >Web Design <span>08</span></a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="javascript:void(0);"
-                                    title="Web Development"
-                                    >Web Development <span>15</span></a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="javascript:void(0);"
-                                    title="SEO & Marketing"
-                                    >SEO & Marketing <span>05</span></a
-                                >
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" title="Business"
-                                    >Business <span>06</span></a
-                                >
-                            </li>
-                            --}}
+                            @endforeach 
                         </ul>
                     </div>
                     <div
@@ -380,49 +168,14 @@
                         <div class="title left">
                             <span class="sub-title">Tags</span>
                         </div>
-                        <ul>
-                            <li>
-                                <a href="javascript:void(0);" title="Business"
-                                    >Business</a
-                                >
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" title="Web"
-                                    >Web</a
-                                >
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" title="Graphic"
-                                    >Graphic</a
-                                >
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" title="Brand"
-                                    >Brand</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="javascript:void(0);"
-                                    title="Development"
-                                    >Development</a
-                                >
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" title="Website"
-                                    >Website</a
-                                >
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" title="Strategy"
-                                    >Strategy</a
-                                >
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" title="Mission"
-                                    >Mission</a
-                                >
-                            </li>
+                        <ul id="tags-list">
+                            <li><a href="javascript:void(0);" title="Business" data-tag="Business">Business</a></li>
+                            <li><a href="javascript:void(0);" title="Web" data-tag="Web">Web</a></li>
+                            <li><a href="javascript:void(0);" title="Graphique" data-tag="Graphique">Graphique</a></li>
+                            <li><a href="javascript:void(0);" title="Brand" data-tag="Brand">Brand</a></li>
+                            <li><a href="javascript:void(0);" title="Site Web" data-tag="Site Web">Site Web</a></li>
+                            <li><a href="javascript:void(0);" title="Strategie" data-tag="Strategy">Strategie</a></li>
+                            <li><a href="javascript:void(0);" title="Mission" data-tag="Mission">Mission</a></li>
                         </ul>
                     </div>
                 </div>
@@ -433,3 +186,49 @@
 <!-- Blog List End -->
 
 @endsection
+@section('script')
+<script>
+    $(document).ready(function() {
+        $('#search').on('input', function() {
+            var query = $(this).val();
+            searchBlogs({ query: query });
+        });
+    
+        $('#tags-list').on('click', 'a[data-tag]', function(e) {
+            e.preventDefault();
+            var tag = $(this).data('tag');
+            searchBlogs({ tag: tag });
+        });
+    
+        function searchBlogs(params) {
+            $.ajax({
+                url: '{{ route("search-blogs") }}',
+                type: 'GET',
+                data: params,
+                success: function(data) {
+                    $('#blog-list').empty();
+                    if (data.length > 0) {
+                        data.forEach(function(blog) {
+                            var blogPost = `
+                                <div class="col-lg-6 wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
+                                    <div class="blog-post back-img" style="background-image: url('/storage/${blog.image}');">
+                                        <span class="blog-date">${new Date(blog.created_at).toLocaleDateString('fr-FR', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                                        <div class="blog-post-text">
+                                            <h3 class="h3-title">${blog.title}</h3>
+                                            <a href="/blog-detail/${blog.id}" class="read-more" title="Read More">Voir plus</a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                            $('#blog-list').append(blogPost);
+                        });
+                    } else {
+                        $('#blog-list').append('<h3 class="h3-title">Aucun Poste</h3>');
+                    }
+                }
+            });
+        }
+    });
+    </script>
+  
+    @endsection
+

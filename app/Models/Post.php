@@ -9,4 +9,9 @@ class Post extends Model
 {
     use HasFactory;
     protected $fillable=['title','image','message','category_id'];
+    
+    public function tags()
+    {
+        return $this->belongsToMany(Tags::class);
+    }
 }

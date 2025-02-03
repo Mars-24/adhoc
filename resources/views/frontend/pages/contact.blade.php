@@ -62,14 +62,14 @@
 						<div class="title left">
 							<span class="sub-title">CONTACTEZ-NOUS</span>
 						</div>
-						<h2 class="h2-title">Contactez-nous pour toute information</h2>
+						<h2 class="h2-title">Contactez-nous pour plus d'informations</h2>
 						<div class="contact-form">
 							<form method="POST" action="{{ route('message') }}">
 								@csrf
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-box">
-											<input name="prenoms" type="text" class="form-input" placeholder="Prénom" required>
+											<input name="prenoms" type="text" class="form-input" placeholder="Prénoms" required>
 										</div>
 									</div>
 									<div class="col-md-6">
